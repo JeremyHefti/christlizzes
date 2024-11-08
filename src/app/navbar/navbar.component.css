@@ -1,0 +1,19 @@
+::ng-deep .custom-menubar {
+  background-color: rgba(217, 217, 217, 0.1);
+  border-radius: 10px;
+  border: solid 2px var(--color-6);
+  color: var(--color-6);
+  font-family: 'Arial', sans-serif; /* Schriftart hier festlegen */
+}
+
+::ng-deep .custom-menubar .p-menuitem-link {
+  color: white; /* Textfarbe auf Weiß setzen */
+  text-decoration: none; /* Keine Unterstreichung im Standardzustand */
+  background-color: transparent; /* Keine Hintergrundfarbe im Standardzustand */
+  font-family: 'Arial', sans-serif; /* Schriftart für Links im Menü */
+}
+
+::ng-deep .custom-menubar .p-menuitem-link:hover {
+  background-color: transparent; /* Transparenter Hintergrund beim Hover */
+  text-decoration: underline;
+}

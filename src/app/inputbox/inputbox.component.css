@@ -1,0 +1,15 @@
+input {
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.1);
+    border: solid 2px var(--color-4);
+    color: var(--color-4);
+    width: 100%;
+    box-sizing: border-box;
+}
+.input-box {
+  width: 100%;
+  padding: 15px;
+}
+.card {
+  padding: 0;
+}

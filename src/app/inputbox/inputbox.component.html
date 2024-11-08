@@ -1,0 +1,12 @@
+<div class="input-box">
+  <p-floatLabel>
+    <input
+      [type]="type"
+      [id]="id"
+      [ngModel]="value"
+      (ngModelChange)="handleInputChange($event)"
+      pInputText
+    />
+    <label [for]="id">{{ placeholder }}</label>
+  </p-floatLabel>
+</div>

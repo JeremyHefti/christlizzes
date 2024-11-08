@@ -1,0 +1,21 @@
+<p-toast></p-toast>
+<div class="main-container">
+  <div class="auth-form">
+    <app-title text="REGISTER" type="title"></app-title>
+    <div class="card flex justify-content-center">
+      <div class="input-boxes">
+        <div>
+          <app-inputbox [(ngModel)]="email" [placeholder]="'Username'" [type]="'text'" [id]="'username'" />
+          <app-inputbox [(ngModel)]="password" [placeholder]="'Password'" [type]="'password'" [id]="'password'" />
+        </div>
+        <div class="text">
+          <app-button label="Register" (click)="register()"/>
+          <a routerLink="/login">
+            <app-title class="account" text="Already have an account?" type="text"></app-title>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

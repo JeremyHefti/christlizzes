@@ -1,0 +1,12 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  background-image: url('./assets/main-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

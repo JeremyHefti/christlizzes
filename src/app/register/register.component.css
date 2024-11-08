@@ -1,0 +1,31 @@
+h1 {
+  color: var(--color-4);
+  font-size: 128px;
+}
+.auth-form {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(217, 217, 217, 0.1);
+  border: solid 2px var(--color-4);
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.text {
+  display: grid;
+  justify-content: center;
+}
+.forgot-password {
+  color: var(--color-1);
+}
+.account {
+  color: var(--color-6);
+}
+a {
+  text-decoration: none;
+}
+
+

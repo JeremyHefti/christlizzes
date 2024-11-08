@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+::ng-deep .button .p-button {
+  width: 70%;
+  min-width: 200px;
+  background-color: var(--color-4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: normal;
+}
