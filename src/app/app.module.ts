@@ -31,7 +31,8 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {HomeComponent} from "./home/home.component";
 import { UsernamePopupComponent } from './username-popup/username-popup.component';
 import {DialogModule} from "primeng/dialog";
-import {DialogService} from "./dialog.service";
+import {DialogService} from "./services/dialog.service";
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {DialogService} from "./dialog.service";
     NavbarComponent,
     DropdownMenuComponent,
     UsernamePopupComponent,
+    ForgetPasswordComponent,
   ],
     imports: [
         BrowserModule,
