@@ -26,6 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MenubarModule} from "primeng/menubar";
 import {BadgeModule} from "primeng/badge";
 import {AvatarModule} from "primeng/avatar";
+import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
+import {MenuModule} from "primeng/menu";
 
 @NgModule({
   declarations: [
@@ -37,24 +39,26 @@ import {AvatarModule} from "primeng/avatar";
     TitleComponent,
     ButtonComponent,
     NavbarComponent,
+    DropdownMenuComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    CommonModule,
-    FloatLabelModule,
-    PasswordModule,
-    InputTextModule,
-    Button,
-    NoopAnimationsModule,
-    ToastModule,
-    AngularFireModule.initializeApp(enviroment.firebase),
-    AngularFireAuthModule,
-    MenubarModule,
-    BadgeModule,
-    AvatarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        CommonModule,
+        FloatLabelModule,
+        PasswordModule,
+        InputTextModule,
+        Button,
+        NoopAnimationsModule,
+        ToastModule,
+        AngularFireModule.initializeApp(enviroment.firebase),
+        AngularFireAuthModule,
+        MenubarModule,
+        BadgeModule,
+        AvatarModule,
+        MenuModule
+    ],
   providers: [MessageService],
   bootstrap: [AppComponent]
 })

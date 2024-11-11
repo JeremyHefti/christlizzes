@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class NavbarComponent implements OnInit {
   items: MenuItem[] | undefined;
   isUser: boolean = false;
+  isVisible: boolean = false;
   private authSubscription: Subscription | undefined;
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -27,6 +28,10 @@ export class NavbarComponent implements OnInit {
     if (this.authSubscription) {
       this.authSubscription.unsubscribe();
     }
+  }
+
+  showDropdown() {
+    this.isVisible = !this.isVisible;
   }
 
   updateMenuItems() {

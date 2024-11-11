@@ -1,0 +1,20 @@
+::ng-deep .p-menu {
+    background-color: rgba(217, 217, 217, 0.1);
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+:host ::ng-deep .p-menu .p-menuitem-text {
+    color: var(--color-6);
+}
+
+:host ::ng-deep .p-menu .p-menuitem-icon {
+    color: var(--color-6);
+}
+
+:host ::ng-deep .p-menu .p-menuitem-link:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+    color: white;
+    border-radius: 5px;
+    box-shadow: none;
+}
