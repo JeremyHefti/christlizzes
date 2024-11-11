@@ -11,7 +11,7 @@ export class DropdownMenuComponent {
 
     ngOnInit() {
       this.items = [
-        { label: 'New', icon: 'pi pi-plus' },
+        { label: 'User', icon: 'pi pi-user' },
         { label: 'Search', icon: 'pi pi-search' }
       ];
   }

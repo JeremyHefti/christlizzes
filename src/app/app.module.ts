@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
@@ -28,6 +27,8 @@ import {BadgeModule} from "primeng/badge";
 import {AvatarModule} from "primeng/avatar";
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import {MenuModule} from "primeng/menu";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {HomeComponent} from "./home/home.component";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {MenuModule} from "primeng/menu";
         ToastModule,
         AngularFireModule.initializeApp(enviroment.firebase),
         AngularFireAuthModule,
+        AngularFirestoreModule,
         MenubarModule,
         BadgeModule,
         AvatarModule,
