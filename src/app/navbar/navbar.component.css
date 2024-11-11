@@ -22,3 +22,8 @@
   border-radius: 5px;
   box-shadow: none;
 }
+.dropdown {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
