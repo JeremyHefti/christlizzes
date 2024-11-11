@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
 import {MessageService} from "primeng/api";
+import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -42,8 +44,10 @@ export class AuthService {
         console.log('Cant logged out', error)
       })
   }
-  get isAuthenticated(): boolean {
-    return this.afAuth.currentUser !== null;
+  get isAuthenticated$(): Observable<boolean> {
+    return this.afAuth.authState.pipe(
+        map(user => user !== null)
+    );
   }
 
   private showToast(severity: string, summary: string) {
