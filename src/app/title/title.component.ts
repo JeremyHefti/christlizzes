@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './title.component.css'
 })
 export class TitleComponent {
-  @Input() text: string = '';
+  @Input() text: string | null = '';
   @Input() type: 'title' | 'subtitle' | 'text' = 'title';
 }
