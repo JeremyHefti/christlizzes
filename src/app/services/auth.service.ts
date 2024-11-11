@@ -6,6 +6,9 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import {getAuth} from "@angular/fire/auth";
+import {waitUntilServerIsListening} from "@angular-devkit/build-angular/src/builders/ssr-dev-server/utils";
+import firebase from "firebase/compat";
+import auth = firebase.auth;
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +33,7 @@ export class AuthService {
                         email: user.email,
                         uid: user.uid,
                         createdAt: new Date(),
-                        username: '' // Leeres Feld für username, das später aktualisiert werden kann
+                        username: ''
                     });
                 } else {
                     throw new Error('Kein Benutzer gefunden.');
@@ -45,6 +48,7 @@ export class AuthService {
                 return Promise.reject(error);
             });
     }
+
 
     setUsername(username: string): Promise<void> {
         return this.afAuth.currentUser
@@ -78,7 +82,6 @@ export class AuthService {
 
 
     login(email: string, password: string) {
-    console.log('Email:', email, 'Password:', password);
     this.afAuth.signInWithEmailAndPassword(email, password)
         .then(() => {
           this.showToast('success', 'Login war erfolgreich');
@@ -99,6 +102,17 @@ export class AuthService {
           console.log('Fehler beim Abmelden', error);
         });
   }
+
+    resetPassword(email: string): Promise<void> {
+        return this.afAuth.sendPasswordResetEmail(email)
+            .then(() => {
+                this.showToast('success', 'Eine E-Mail zum Zurücksetzen des Passworts wurde gesendet.');
+            })
+            .catch((error) => {
+                this.handleError(error);
+                return Promise.reject(error);
+            });
+    }
 
   get isAuthenticated$(): Observable<boolean> {
     return this.afAuth.authState.pipe(

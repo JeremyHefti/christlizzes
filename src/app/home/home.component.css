@@ -1,3 +1,7 @@
 .navbar {
   margin: 20px;
 }
+.welcome-text {
+  margin-top: 25vh;
+  display: grid;
+}

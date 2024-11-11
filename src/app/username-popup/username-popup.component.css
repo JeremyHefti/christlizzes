@@ -1,9 +1,7 @@
-/* Style the dialog content */
 .dialog-content {
     padding: 1.5rem;
 }
 
-/* Input group styling */
 .input-group {
     display: flex;
     align-items: center;
@@ -34,36 +32,10 @@
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Button group styling */
 .button-group {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-}
-
-/* Cancel button styling */
-.cancel-btn {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-    font-weight: 600;
-}
-
-/* Save button styling */
-.save-btn {
-    background-color: #28a745;
-    border-color: #28a745;
-    color: #fff;
-    font-weight: 600;
-}
-
-/* Hover effect for buttons */
-.cancel-btn:hover {
-    background-color: #f5c6cb;
-}
-
-.save-btn:hover {
-    background-color: #218838;
 }
 
 .p-dialog {

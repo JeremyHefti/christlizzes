@@ -48,17 +48,7 @@ export class NavbarComponent implements OnInit {
         label: 'Contact',
         icon: 'pi pi-envelope'
       },
-      {
-        label: this.isUser ? 'Logout' : 'Sign In',  // Conditional label
-        icon: this.isUser ? 'pi pi-sign-out' : 'pi pi-sign-in',  // Conditional icon
-        command: () => {
-          if (this.isUser) {
-            this.authService.logout();
-          } else {
-            this.router.navigate(['/login'])
-          }
-        }
-      }
+
     ];
   }
 }
