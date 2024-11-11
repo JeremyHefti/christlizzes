@@ -29,6 +29,9 @@ import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import {MenuModule} from "primeng/menu";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {HomeComponent} from "./home/home.component";
+import { UsernamePopupComponent } from './username-popup/username-popup.component';
+import {DialogModule} from "primeng/dialog";
+import {DialogService} from "./dialog.service";
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import {HomeComponent} from "./home/home.component";
     ButtonComponent,
     NavbarComponent,
     DropdownMenuComponent,
+    UsernamePopupComponent,
   ],
     imports: [
         BrowserModule,
@@ -59,7 +63,8 @@ import {HomeComponent} from "./home/home.component";
         MenubarModule,
         BadgeModule,
         AvatarModule,
-        MenuModule
+        MenuModule,
+        DialogModule
     ],
   providers: [MessageService],
   bootstrap: [AppComponent]

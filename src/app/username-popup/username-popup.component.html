@@ -1,0 +1,14 @@
+<div class="card flex justify-content-center">
+    <p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+        <div class="dialog-content">
+            <div class="input-group mb-3">
+                <label for="username" class="label">Username</label>
+                <input pInputText id="username" class="input-field" autocomplete="off" [(ngModel)]="username" />
+            </div>
+            <div class="button-group">
+                <p-button label="Cancel" severity="secondary" class="cancel-btn" (onClick)="closeDialog()" />
+                <p-button label="Save" class="save-btn" (onClick)="saveProfile()" />
+            </div>
+        </div>
+    </p-dialog>
+</div>

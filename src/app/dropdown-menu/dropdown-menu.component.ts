@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {UsernamePopupComponent} from "../username-popup/username-popup.component";
+import {DialogService} from "../dialog.service";
 
 @Component({
   selector: 'app-dropdown-menu',
@@ -9,11 +11,20 @@ import {MenuItem} from "primeng/api";
 export class DropdownMenuComponent {
   items: MenuItem[] | undefined;
 
-    ngOnInit() {
-      this.items = [
-        { label: 'User', icon: 'pi pi-user' },
-        { label: 'Search', icon: 'pi pi-search' }
-      ];
+  constructor(private dialogService: DialogService) {}  // Inject DialogService
+
+  ngOnInit() {
+    this.items = [
+      {
+        label: 'User',
+        icon: 'pi pi-user',
+        command: () => {
+          console.log('user click')
+          this.dialogService.showDialog();
+        }
+      },
+      { label: 'Search', icon: 'pi pi-search' }
+    ];
   }
 
 }

@@ -70,13 +70,14 @@ export class AuthService {
     }
 
 
-    getUsername(): Observable<string | null> {
+    getUsername(): Observable<string> {
         return this.afAuth.authState.pipe(
-            map((user) => user?.displayName || null)
+            map(user => user?.displayName || '')
         );
     }
 
-  login(email: string, password: string) {
+
+    login(email: string, password: string) {
     console.log('Email:', email, 'Password:', password);
     this.afAuth.signInWithEmailAndPassword(email, password)
         .then(() => {
