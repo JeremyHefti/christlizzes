@@ -41,5 +41,5 @@ e2e/*.map
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
-
 # End of https://www.toptal.com/developers/gitignore/api/angular,firebase
+/src/enviroments/

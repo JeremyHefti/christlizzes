@@ -4,7 +4,7 @@ import firebase from "firebase/compat";
 
 export const enviroment = {
   firebase: {
-    apiKey: "AIzaSyAKbyMiAzKus_XTHpgbnhzTdySMfIh1HK4",
+    apiKey: "AIzaSyDfrO5DS1cCok47F5q9gj3PjlW-1ZC12T0",
     authDomain: "my-christlizzes.firebaseapp.com",
     projectId: "my-christlizzes",
     storageBucket: "my-christlizzes.appspot.com",
