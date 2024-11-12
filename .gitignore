@@ -43,3 +43,5 @@ e2e/*.map
 .firebase/
 # End of https://www.toptal.com/developers/gitignore/api/angular,firebase
 /src/enviroments/
+# Um .env-Datei von Git zu ignorieren
+.env
