@@ -5,3 +5,6 @@
       <app-title [text]="username" type="title"></app-title>
    </div>
 </div>
+<div *ngIf="showPopUp">
+    <app-username-popup></app-username-popup>
+</div>

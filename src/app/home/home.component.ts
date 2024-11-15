@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../services/auth.service";
+import {DialogService} from "../services/dialog.service";
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,17 @@ import {AuthService} from "../services/auth.service";
 })
 export class HomeComponent implements OnInit {
   username: string | null = '';
+  showPopUp: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private dialogService: DialogService) {}
 
   ngOnInit() {
     this.authService.getUsername().subscribe((username) => {
-      this.username = username;
+      this.username = username || "";
+
+      if (!this.username) {
+        this.dialogService.showDialog();
+      }
     });
   }
 }

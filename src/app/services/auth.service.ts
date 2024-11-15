@@ -26,22 +26,24 @@ export class AuthService {
     signUp(email: string, password: string): Promise<void> {
         return this.afAuth.createUserWithEmailAndPassword(email, password)
             .then(() => this.afAuth.currentUser)
-            .then((user) => {
+            .then(async (user) => {
                 if (user) {
+                    // Benutzerinformationen in Firestore speichern
                     const userRef = this.firestore.collection('users').doc(user.uid);
-                    return userRef.set({
+                    await userRef.set({
                         email: user.email,
                         uid: user.uid,
                         createdAt: new Date(),
                         username: ''
                     });
+
+                    await user.sendEmailVerification();
+
+                    this.router.navigate(['/register']);
+                    this.showToast('success', 'Please verify your Email')
                 } else {
                     throw new Error('Kein Benutzer gefunden.');
                 }
-            })
-            .then(() => {
-                this.showToast('success', 'Account wurde erfolgreich erstellt');
-                this.router.navigate(['/home']);
             })
             .catch((error) => {
                 this.handleError(error);
@@ -49,8 +51,18 @@ export class AuthService {
             });
     }
 
+    checkEmailVerification(): void {
+        this.afAuth.onAuthStateChanged(async (user) => {
+            if (user) {
+                await user.reload();
+                if (user.emailVerified) {
+                    this.router.navigate(['/home']);
+                }
+            }
+        });
+    }
 
-    setUsername(username: string): Promise<void> {
+setUsername(username: string): Promise<void> {
         return this.afAuth.currentUser
             .then((user) => {
                 if (user) {

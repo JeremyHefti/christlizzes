@@ -8,22 +8,18 @@ import {AuthService} from "../services/auth.service";
   styleUrls: ['./username-popup.component.css']
 })
 export class UsernamePopupComponent implements OnInit {
-  username: string = '';  // Variable zum Speichern des Benutzernamens
-  visible: boolean = false;  // Steuert die Sichtbarkeit des Dialogs
+  username: string = '';
+  visible: boolean = false;
 
   constructor(private authService: AuthService, private dialogService: DialogService) {}
 
   ngOnInit() {
     this.authService.getUsername().subscribe(username => {
-      this.username = username || '';
+      this.username = username || "";
     });
     this.dialogService.dialogVisible$.subscribe((visible) => {
       this.visible = visible;
     });
-  }
-
-  openDialog() {
-    this.visible = true;
   }
 
   closeDialog() {
@@ -38,7 +34,7 @@ export class UsernamePopupComponent implements OnInit {
               this.username = username;
             });
             console.log('Benutzername wurde erfolgreich aktualisiert');
-            this.closeDialog(); // Dialog nach dem Speichern schließen
+            this.closeDialog();
           })
           .catch((error) => {
             console.error('Fehler beim Aktualisieren des Benutzernamens:', error);
