@@ -7,6 +7,7 @@ import {AuthService} from "../services/auth.service";
   styleUrls: ['register.component.css']
 })
 export class RegisterComponent {
+  private verificationInterval: any;
   email: string = '';
   password: string = '';
 
@@ -14,5 +15,17 @@ export class RegisterComponent {
 
   register() {
     this.authService.signUp(this.email, this.password)
+  }
+
+  ngOnInit(): void {
+    this.verificationInterval = setInterval(() => {
+      this.authService.checkEmailVerification();
+    }, 5000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.verificationInterval) {
+      clearInterval(this.verificationInterval);
+    }
   }
 }
